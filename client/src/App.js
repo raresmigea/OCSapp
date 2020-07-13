@@ -1,7 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { render } from '@testing-library/react';
+import Table from './components/Table';
 
 class App extends React.Component {
   constructor(props) {
@@ -14,6 +13,7 @@ class App extends React.Component {
     fetch('http://localhost:9000/testAPI')
       .then((res) => res.text())
       .then((res) => this.setState({ apiResponse: res }));
+    console.log('RESPONSE: ', this.state.apiResponse);
   }
 
   componentWillMount() {
@@ -24,7 +24,7 @@ class App extends React.Component {
     return (
       <div className='App'>
         <header className='App-header'>
-          <img src={logo} className='App-logo' alt='logo' />
+          <Table data={this.state.apiResponse} />
           <p>{this.state.apiResponse}</p>
         </header>
       </div>
