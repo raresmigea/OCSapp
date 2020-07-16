@@ -21,19 +21,14 @@ class Table extends React.Component {
 
   renderGame = (game, index) => {
     return (
-      // <tr >
       <th key={index}>
         {game.city} {game.year}
       </th>
-      // </tr>
     );
   };
 
   render() {
     const { data } = this.props;
-    console.log('PPPPPPP: ', data);
-    console.log('typeof data: ', typeof data);
-    console.log('primU: ', data[0]);
     const goodData = data;
     const result = goodData.reduce(
       (acc, val) => ({
@@ -44,8 +39,6 @@ class Table extends React.Component {
       }),
       {}
     );
-
-    console.log('result: ', result);
 
     return (
       <div className='table-container'>
