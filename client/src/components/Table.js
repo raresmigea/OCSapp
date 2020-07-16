@@ -6,6 +6,17 @@ class Table extends React.Component {
     super(props);
   }
 
+  renderPlayer = (player, index) => {
+    return (
+      <tr key={index}>
+        <td>{player.game_id}</td>
+        <td>{player.city}</td>
+        <td>{player.year}</td>
+        <td>{player.athlete_id}</td>
+      </tr>
+    );
+  };
+
   render() {
     const { data } = this.props;
     console.log('PPPPPPP: ', data);
@@ -35,25 +46,7 @@ class Table extends React.Component {
               <th>Username</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td colSpan='2'>Larry the Bird</td>
-              <td>@twitter</td>
-            </tr>
-          </tbody>
+          <tbody>{goodData.map(this.renderPlayer)}</tbody>
         </ReactBootStrap.Table>
       </div>
     );
