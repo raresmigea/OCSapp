@@ -7,7 +7,7 @@ router.get('/', function (req, res, next) {
   db.serialize(function () {
     db.all(
       // 'SELECT name FROM sqlite_master WHERE type="table"',
-      'SELECT a.athlete_id, a.name, a.surname, a.date_of_birth, a.bio, a.height, a.weight, ap.photo, ap.mime_type,ar.gold, ar.silver, ar.bronze, g.city, g.year FROM(((Athlete a JOIN AthletePhoto ap ON a.photo_id = ap.photo_id) JOIN AthleteResult ar ON a.athlete_id = ar.athlete_id) JOIN Game g ON ar.game_id = g.game_id)',
+      'SELECT g.game_id, g.city, g.year, ar.athlete_id, ar.gold, ar.silver, ar.bronze FROM(Game g join AthleteResult ar on g.game_id = ar.game_id) order by g.year desc',
       function (err, rows) {
         return res.send(rows);
       }

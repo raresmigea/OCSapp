@@ -6,17 +6,16 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { apiResponse: '' };
+    this.state = { apiResponse: [] };
   }
 
   callAPI() {
     fetch('http://localhost:9000/testAPI')
-      .then((res) => res.text())
+      .then((res) => res.json())
       .then((res) => this.setState({ apiResponse: res }));
-    console.log('RESPONSE: ', this.state.apiResponse);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.callAPI();
   }
 
@@ -25,7 +24,6 @@ class App extends React.Component {
       <div className='App'>
         <header className='App-header'>
           <Table data={this.state.apiResponse} />
-          <p>{this.state.apiResponse}</p>
         </header>
       </div>
     );
