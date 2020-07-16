@@ -1,5 +1,5 @@
 import React from 'react';
-import { data } from '../resources/database';
+import * as ReactBootStrap from 'react-bootstrap';
 
 class Table extends React.Component {
   constructor(props) {
@@ -26,17 +26,35 @@ class Table extends React.Component {
 
     return (
       <div>
-        <table>
+        <ReactBootStrap.Table striped bordered hover size='sm'>
           <thead>
             <tr>
-              {Object.keys(result).map((key, index) => (
-                <th key={key}>{key}</th>
-              ))}
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Username</th>
             </tr>
-            {/* <tr>{Object.keys(result)}</tr> */}
           </thead>
-          {/* <tbody>{this.getRowsData()}</tbody> */}
-        </table>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td colSpan='2'>Larry the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </ReactBootStrap.Table>
       </div>
     );
   }
