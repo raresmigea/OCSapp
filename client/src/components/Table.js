@@ -17,6 +17,14 @@ class Table extends React.Component {
     );
   };
 
+  renderGame = (game, index) => {
+    return (
+      <tr key={index}>
+        <th>{game}</th>
+      </tr>
+    );
+  };
+
   render() {
     const { data } = this.props;
     console.log('PPPPPPP: ', data);
@@ -40,6 +48,7 @@ class Table extends React.Component {
         <ReactBootStrap.Table striped bordered hover size='sm'>
           <thead>
             <tr>
+              {/* {result.map(this.renderGame)} */}
               <th>Game id</th>
               <th>City</th>
               <th>Year</th>
