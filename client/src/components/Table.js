@@ -40,10 +40,10 @@ class Table extends React.Component {
         <ReactBootStrap.Table striped bordered hover size='sm'>
           <thead>
             <tr>
-              <th>#</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Username</th>
+              <th>Game id</th>
+              <th>City</th>
+              <th>Year</th>
+              <th>athlete_id</th>
             </tr>
           </thead>
           <tbody>{goodData.map(this.renderPlayer)}</tbody>
