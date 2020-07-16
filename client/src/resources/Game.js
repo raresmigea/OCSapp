@@ -1,4 +1,4 @@
-export const game = [
+export const games = [
   { game_id: 1, city: 'Tokyo', year: 2020 },
   { game_id: 2, city: 'Rio de Janeiro', year: 2016 },
   { game_id: 3, city: 'London', year: 2012 },

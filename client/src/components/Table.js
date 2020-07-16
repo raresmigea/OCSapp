@@ -1,5 +1,7 @@
 import React from 'react';
 import * as ReactBootStrap from 'react-bootstrap';
+import { games } from '../resources/Game';
+import './Table.css';
 
 class Table extends React.Component {
   constructor(props) {
@@ -19,9 +21,11 @@ class Table extends React.Component {
 
   renderGame = (game, index) => {
     return (
-      <tr key={index}>
-        <th>{game}</th>
-      </tr>
+      // <tr >
+      <th key={index}>
+        {game.city} {game.year}
+      </th>
+      // </tr>
     );
   };
 
@@ -44,16 +48,10 @@ class Table extends React.Component {
     console.log('result: ', result);
 
     return (
-      <div>
+      <div className='table-container'>
         <ReactBootStrap.Table striped bordered hover size='sm'>
           <thead>
-            <tr>
-              {/* {result.map(this.renderGame)} */}
-              <th>Game id</th>
-              <th>City</th>
-              <th>Year</th>
-              <th>athlete_id</th>
-            </tr>
+            <tr>{games.map(this.renderGame)}</tr>
           </thead>
           <tbody>{goodData.map(this.renderPlayer)}</tbody>
         </ReactBootStrap.Table>
