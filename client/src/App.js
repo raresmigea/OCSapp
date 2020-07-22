@@ -11,7 +11,7 @@ class App extends React.Component {
 
   callAPI() {
     fetch('http://localhost:9000/testAPI')
-      .then((res) => res.json()) // if it's res.text() it's not good -> cannot use it afterwards
+      .then((res) => res.json())
       .then((res) => this.setState({ apiResponse: res }));
   }
 
