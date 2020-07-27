@@ -47,6 +47,7 @@ class Table extends React.Component {
           <thead>
             <tr>{games.map(this.renderGame)}</tr>
           </thead>
+
           {/* <tbody>{goodData.map(this.renderPlayer)}</tbody> */}
         </ReactBootStrap.Table>
       </div>
