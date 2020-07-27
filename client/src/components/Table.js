@@ -28,8 +28,9 @@ class Table extends React.Component {
   };
 
   render() {
-    const { data } = this.props;
-    const goodData = data;
+    // const { data } = this.props;
+    // const goodData = data;
+
     // const result = goodData.reduce(
     //   (acc, val) => ({
     //     ...acc,
