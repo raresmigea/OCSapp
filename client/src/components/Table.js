@@ -28,17 +28,18 @@ class Table extends React.Component {
   };
 
   render() {
-    const { data } = this.props;
-    const goodData = data;
-    const result = goodData.reduce(
-      (acc, val) => ({
-        ...acc,
-        [val.game_id]: acc[val.game_id]
-          ? [...acc[val.game_id], val.athlete_id]
-          : [val.athlete_id],
-      }),
-      {}
-    );
+    // const { data } = this.props;
+    // const goodData = data;
+
+    // const result = goodData.reduce(
+    //   (acc, val) => ({
+    //     ...acc,
+    //     [val.game_id]: acc[val.game_id]
+    //       ? [...acc[val.game_id], val.athlete_id]
+    //       : [val.athlete_id],
+    //   }),
+    //   {}
+    // );
 
     return (
       <div className='table-container'>
