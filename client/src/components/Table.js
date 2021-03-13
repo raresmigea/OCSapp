@@ -21,7 +21,7 @@ class Table extends React.Component {
 
   renderGame = (game, index) => {
     return (
-      <th key={index}>
+      <th className='game-header' key={index}>
         {game.city} {game.year}
       </th>
     );
@@ -46,7 +46,7 @@ class Table extends React.Component {
           <thead>
             <tr>{games.map(this.renderGame)}</tr>
           </thead>
-          <tbody>{goodData.map(this.renderPlayer)}</tbody>
+          {/* <tbody>{goodData.map(this.renderPlayer)}</tbody> */}
         </ReactBootStrap.Table>
       </div>
     );
